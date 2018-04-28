@@ -77,8 +77,11 @@ Puzzle* mover_pieza_hacia(int direccion, Puzzle* puzzle)
 
 //Funcion anular
 void AnularPuzzle(Puzzle* Puzzle)
-{  
-	free(Puzzle->Estado);
+{   
+	if(Puzzle->Estado != NULL)
+	{ 
+		free(Puzzle->Estado);
+	} 
 	free(Puzzle);    
 	return;
 } 

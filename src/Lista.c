@@ -40,7 +40,7 @@ int ObtenerMinimoLista(Lista* lista)
 	{
 		return -1;
 	}
-	
+
 	nodo* nodoActual = lista->Cabeza;
 	int minimo = nodoActual->Dato;
 
@@ -50,6 +50,7 @@ int ObtenerMinimoLista(Lista* lista)
         {
             minimo = nodoActual->Dato;  
         }
+        nodoActual = nodoActual->Siguiente;
     } 
 	return minimo;
 }
@@ -61,6 +62,7 @@ void AnularLista(Lista* lista)
 	while(nodoActual != NULL)
     {
     	free(nodoActual);
+    	nodoActual = nodoActual->Siguiente;
     }
     free(lista); 
 	return;

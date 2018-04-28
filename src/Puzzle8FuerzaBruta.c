@@ -14,22 +14,28 @@ void Puzzle8FuerzaBruta(Puzzle* estadoActual,
                         Lista* listaExitos, 
                         int nMovimientos)
 { 
-    //Si se llega al estado objetivo, añadir el contador de movimientos 
-    //a la lista de resultados
-    if(nMovimientos > 10)
+    printf("\n----------Inicio de rama en altura %d---------\n\n",nMovimientos);
+    //Limitador de movimientos, para computadoras de bajo rendimiento
+    //Configuracion en archivo "Includes.h" en carpeta "include"
+    //ADVERTENCIA: habilitar esta funcion interrumpe el algoritmo
+    //             de fuerza bruta. Utilizar bajo su propio criterio.
+    if(LIMITAR_MOVIMIENTOS == TRUE && nMovimientos > NUMERO_LIMITE_MOVIMIENTOS)
     {
+        printf("Limite movimientos sobrepasado\n");
         return;
     }
 
+    //Si se llega al estado objetivo, añadir el contador de movimientos 
+    //a la lista de resultados
     if(son_iguales(estadoActual,estadoObjetivo))
     {
         AppendLista(listaExitos, nMovimientos);
-        bugTracker("Objetivo alcanzado\n");
+        printf("Objetivo alcanzado\n");
         return;
     }
     if(ExisteEnListaPuzzle(listaEstados,estadoActual)==TRUE)
     {
-        bugTracker("Estado pasado\n");
+        printf("Estado pasado\n");
         AnularPuzzle(estadoActual);
         return;
     }
@@ -38,9 +44,8 @@ void Puzzle8FuerzaBruta(Puzzle* estadoActual,
         listaEstados = AppendListaPuzzle(listaEstados, estadoActual);
     }
 
-    bugTracker("Estado actual: \n");
+    printf("Estado actual: \n");
     MostrarPuzzle(estadoActual);
-    getchar();
 
     Puzzle* movimientoArriba = es_posible_mover_pieza_hacia(ARRIBA, estadoActual, listaEstados);
     Puzzle* movimientoAbajo = es_posible_mover_pieza_hacia(ABAJO, estadoActual, listaEstados);
@@ -52,26 +57,28 @@ void Puzzle8FuerzaBruta(Puzzle* estadoActual,
     //Si se puede mover la pieza arriba
     if(movimientoArriba != NULL)
     {
-        bugTracker("Mover arriba\n"); 
+        printf("Mover arriba\n"); 
         Puzzle8FuerzaBruta(movimientoArriba,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     }
     //si se puede mover la pieza abajo
     if(movimientoAbajo != NULL)
     {
-        bugTracker("Mover abajo\n");  
+        printf("Mover abajo\n");  
         Puzzle8FuerzaBruta(movimientoAbajo,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     }
     //si se puede mover la pieza a la izquierda
     if(movimientoIzquierda != NULL)
     { 
-        bugTracker("Mover izquierda\n"); 
+        printf("Mover izquierda\n"); 
         Puzzle8FuerzaBruta(movimientoIzquierda,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     } 
     //si se puede mover la pieza a la derecha
     if(movimientoDerecha != NULL)
     { 
-        bugTracker("Mover derecha\n"); 
+        printf("Mover derecha\n"); 
         Puzzle8FuerzaBruta(movimientoDerecha,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     }
+    printf("Todas las combinaciones posibles de este nodo de la rama\nhan sido revisadas\n");
+    printf("\n----------Fin de rama en altura %d---------\n\n",nMovimientos);
     return;
 }

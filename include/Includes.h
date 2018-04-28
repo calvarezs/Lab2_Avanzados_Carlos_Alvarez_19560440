@@ -22,7 +22,7 @@
 #define FALSE 0  
 
 //Definicion constante DEBUG
-#define DEBUG 1
+#define DEBUG 0
 
 //Definicion constantes direcciones
 #define ARRIBA 0
@@ -36,4 +36,11 @@
 #define N_PIEZAS_PUZZLE 9
 #define LARGO_PALABRA_PUZZLE 11 
 #define MAXIMO_LARGO_NOMBRE 25
+
+//Definicion limitante de movimientos
+//ADVERTENCIA: habilitar esta funcion interrumpe el algoritmo
+//				habitual de fuerza bruta. Utilizar bajo su propio criterio.
+#define LIMITAR_MOVIMIENTOS TRUE
+#define NUMERO_LIMITE_MOVIMIENTOS 10
+
 #endif

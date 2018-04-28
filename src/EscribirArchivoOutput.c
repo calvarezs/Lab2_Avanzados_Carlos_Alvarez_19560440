@@ -6,7 +6,7 @@ void EscribirArchivoOutput(char* nombreArchivoSalida, int resultado)
 	
 	FILE* archivo; 
 	archivo = fopen(nombreArchivoSalida,"w");
-    fprintf(archivo, "La cantidad minima de movimientos es :%d\n", resultado);
+    fprintf(archivo, "La cantidad minima de movimientos es %d\n", resultado);
     fclose(archivo); 
 
 	bugTracker("Fin de funcion LeerArchivoOutput\n");	

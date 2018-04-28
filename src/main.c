@@ -11,8 +11,7 @@ int main()
     char* nombreArchivoEntrada;
     char* nombreArchivoSalida;
 
-    Lista* listaExitos;
-    Lista* posActual;
+    Lista* listaExitos; 
 
     Puzzle* estadoActual;
     Puzzle* estadoObjetivo;
@@ -34,21 +33,17 @@ int main()
     //Ejecutar procedimiento principal 
     nMovimientos = 0;
     Puzzle8FuerzaBruta(estadoActual,estadoObjetivo,listaEstados,listaExitos, nMovimientos);
-    
+
     //Si la lista de combinaciones exitosas contiene elementos
     resultado = ObtenerMinimoLista(listaExitos);
 
     //Imprimir resultado en archivo entrada 
     EscribirArchivoOutput(nombreArchivoSalida, resultado);
 
-    //Liberar memoria utilizada 
+    //Liberar memoria utilizada  
     free(nombreArchivoEntrada);
-    free(nombreArchivoSalida);
-
-    AnularLista(listaExitos);
-
-    AnularPuzzle(estadoActual);
-    AnularPuzzle(estadoObjetivo);
+    free(nombreArchivoSalida); 
+    AnularLista(listaExitos); 
     AnularListaPuzzle(listaEstados); 
 
     printf("/////////////Fin de programa///////////////////////\n");

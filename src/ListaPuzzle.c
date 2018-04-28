@@ -122,6 +122,7 @@ void AnularListaPuzzle(ListaPuzzle* listaPuzzle)
 	while(nodoActual != NULL)
     {
     	AnularPuzzle(nodoActual);
+    	nodoActual = nodoActual->Siguiente;
     }
     free(listaPuzzle); 
      

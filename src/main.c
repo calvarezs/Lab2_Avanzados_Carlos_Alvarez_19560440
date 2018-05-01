@@ -41,9 +41,14 @@ int main()
     EscribirArchivoOutput(nombreArchivoSalida, resultado);
 
     //Liberar memoria utilizada  
+        //Se anulan los nombres de archivo
     free(nombreArchivoEntrada);
     free(nombreArchivoSalida); 
-    AnularLista(listaExitos); 
+        //Se anula la lista dinamica
+    AnularLista(listaExitos);
+        //Se anula el estado inicial  
+    free(estadoObjetivo); 
+        //Finalmente se libera la lista de estados de puzzle.
     AnularListaPuzzle(listaEstados); 
 
     printf("/////////////Fin de programa///////////////////////\n");

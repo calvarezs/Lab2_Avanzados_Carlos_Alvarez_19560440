@@ -41,6 +41,6 @@
 //ADVERTENCIA: habilitar esta funcion interrumpe el algoritmo
 //				habitual de fuerza bruta. Utilizar bajo su propio criterio.
 #define LIMITAR_MOVIMIENTOS TRUE
-#define NUMERO_LIMITE_MOVIMIENTOS 10
+#define NUMERO_LIMITE_MOVIMIENTOS 500
 
 #endif

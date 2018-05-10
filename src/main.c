@@ -32,7 +32,7 @@ int main()
 
     //Ejecutar procedimiento principal 
     nMovimientos = 0;
-    Puzzle8FuerzaBruta(estadoActual,estadoObjetivo,listaEstados,listaExitos, nMovimientos);
+    Puzzle8Backtracking(estadoActual,estadoObjetivo,listaEstados,listaExitos, nMovimientos);
 
     //Si la lista de combinaciones exitosas contiene elementos
     resultado = ObtenerMinimoLista(listaExitos);

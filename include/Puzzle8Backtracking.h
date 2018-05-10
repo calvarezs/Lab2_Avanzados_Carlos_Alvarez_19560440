@@ -11,7 +11,7 @@ Entradas:   *Un puzzle que indica el estado actual del puzzle
                 necesarios para resolver el puzzle de alguna forma
 */
 
-void Puzzle8FuerzaBruta(Puzzle* estadoActual,
+void Puzzle8Backtracking(Puzzle* estadoActual,
                         Puzzle* estadoObjetivo,
                         ListaPuzzle* listaEstados,
                         Lista* listaExitos, 

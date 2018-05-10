@@ -15,7 +15,7 @@
 #include "ObtenerNombresArchivosIO.h"
 #include "LeerArchivoInput.h"
 #include "EscribirArchivoOutput.h"
-#include "Puzzle8FuerzaBruta.h"
+#include "Puzzle8Backtracking.h"
 
 //Definicion de tipo de dato bool
 #define TRUE 1
@@ -41,6 +41,6 @@
 //ADVERTENCIA: habilitar esta funcion interrumpe el algoritmo
 //				habitual de fuerza bruta. Utilizar bajo su propio criterio.
 #define LIMITAR_MOVIMIENTOS TRUE
-#define NUMERO_LIMITE_MOVIMIENTOS 500
+#define NUMERO_LIMITE_MOVIMIENTOS 50
 
 #endif

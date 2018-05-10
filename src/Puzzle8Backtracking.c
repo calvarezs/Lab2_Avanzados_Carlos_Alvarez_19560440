@@ -8,7 +8,7 @@ Entradas:   *Un puzzle que indica el estado actual del puzzle
             *La lista con valores, cada uno representando la cantidad de movimientos    
                 necesarios para resolver el puzzle de alguna forma
 */
-void Puzzle8FuerzaBruta(Puzzle* estadoActual,
+void Puzzle8Backtracking(Puzzle* estadoActual,
                         Puzzle* estadoObjetivo,
                         ListaPuzzle* listaEstados,
                         Lista* listaExitos, 
@@ -58,25 +58,25 @@ void Puzzle8FuerzaBruta(Puzzle* estadoActual,
     if(movimientoArriba != NULL)
     {
         printf("Mover arriba\n"); 
-        Puzzle8FuerzaBruta(movimientoArriba,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
+        Puzzle8Backtracking(movimientoArriba,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     }
     //si se puede mover la pieza abajo
     if(movimientoAbajo != NULL)
     {
         printf("Mover abajo\n");  
-        Puzzle8FuerzaBruta(movimientoAbajo,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
+        Puzzle8Backtracking(movimientoAbajo,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     }
     //si se puede mover la pieza a la izquierda
     if(movimientoIzquierda != NULL)
     { 
         printf("Mover izquierda\n"); 
-        Puzzle8FuerzaBruta(movimientoIzquierda,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
+        Puzzle8Backtracking(movimientoIzquierda,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     } 
     //si se puede mover la pieza a la derecha
     if(movimientoDerecha != NULL)
     { 
         printf("Mover derecha\n"); 
-        Puzzle8FuerzaBruta(movimientoDerecha,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
+        Puzzle8Backtracking(movimientoDerecha,estadoObjetivo,listaEstados,listaExitos,nMovimientos);
     }
     printf("Todas las combinaciones posibles de este nodo de la rama\nhan sido revisadas\n");
     printf("\n----------Fin de rama en altura %d---------\n\n",nMovimientos);

@@ -6,10 +6,10 @@ ODIR=obj
 LDIR =../lib 
 
 
-_DEPS = Includes.h bugTracker.h Lista.h Puzzle.h ListaPuzzle.h ObtenerNombresArchivosIO.h LeerArchivoInput.h EscribirArchivoOutput.h Puzzle8FuerzaBruta.h
+_DEPS = Includes.h bugTracker.h Lista.h Puzzle.h ListaPuzzle.h ObtenerNombresArchivosIO.h LeerArchivoInput.h EscribirArchivoOutput.h Puzzle8Backtracking.h
 DEPS = $(patsubst %,$(IDIR)/%,$(_DEPS))
 
-_OBJ = main.o bugTracker.o Lista.o Puzzle.o ListaPuzzle.o ObtenerNombresArchivosIO.o LeerArchivoInput.o EscribirArchivoOutput.o Puzzle8FuerzaBruta.o
+_OBJ = main.o bugTracker.o Lista.o Puzzle.o ListaPuzzle.o ObtenerNombresArchivosIO.o LeerArchivoInput.o EscribirArchivoOutput.o Puzzle8Backtracking.o
 OBJ = $(patsubst %,$(ODIR)/%,$(_OBJ))
 
 

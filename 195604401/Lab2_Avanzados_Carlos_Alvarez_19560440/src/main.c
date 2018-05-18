@@ -18,7 +18,7 @@ int main()
     ListaPuzzle* listaEstados;
 
     //Iniciar memoria elementos
-    estadoObjetivo = CrearPuzzle("x12345678"); 
+    estadoObjetivo = CrearPuzzle("12345678x"); 
     listaEstados = CrearListaPuzzleNueva();
     listaExitos = CrearListaNueva();
 

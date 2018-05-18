@@ -1,0 +1,13 @@
+Para compilar en Linux
+-En la carpeta "src" dentro de la carpeta de codigo fuente, por consola escribir "make clean" sin comillas para limpiar los archivos .o 
+-Escribir el comando "make" sin comillas para compilar
+-Ejecute con el comando ./Puzzle8.out
+
+Para compilar en windows
+-Instalar un compilador en C con MinGW
+-Modificar el makefile para que la extension del ejecutable sea .exe 
+(el makefile esta en la carpeta src)
+-Utilizar los comandos de linux en la consola de MinGW
+
+IMPORTANTE: En el archivo Includes.h hay constantes que delimitan el máximo de movimientos de puzzle por combinación.
+Modfiquese si el programa excede la capacidad de memoria del computador.
